@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sistema de Seguimiento y Control de Tramites de Saneamiento</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/funciones.js"></script>
+    <script>
+        navbar();
+    </script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="container">
+        <h2>&nbsp;</h2>
+        <p>
+            Lista de Tramites Atendido, Pendientes y Externos.
+        </p>
+        <div class="table-responsive-sm">
+            <div id="mostrarDesconexion"></div>
+        </div>
+        <form id="form" method="post">
+        <div class="input-group mb-3">
+            <input type="date" class="form-control" id="fecha_de" name="fecha_de">
+            <input type="date" class="form-control" id="fecha_a" name="fecha_a">
+            <div class="input-group-append">
+                <button class="btn btn-success" type="button" onclick="misTramites();">Listar</button>
+            </div>
+        </div>
+        </form>
+        <div class="table-responsive-sm">
+            <div id="mostrardatos"></div>
+        </div>
+    </div>
+</body>
+</html>

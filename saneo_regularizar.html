@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sistema de Seguimiento y Control de Tramites de Saneamiento</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/funciones.js"></script>
+    <script>
+        navbar();
+        listarTramites();
+    </script>
+</head>
+<body>
+    <div id="navbar"></div>
+    <div class="container">
+        <h2>Regularizar Tramites Pendientes de Enero y Febrero</h2>
+        <p>
+            La fecha de ingreso del tramite solo puede ser anterior al 3 de marzo de 2020.
+        </p>
+        <div class="table-responsive-sm">
+            <div id="mostrarDesconexion"></div>
+        </div>
+        <form class="was-validated" method="POST" id="form">
+            <div class="form-group" id="listartramites"></div>
+            <div class="form-group">
+                <label for="datos_usuario">Cedula de Identidad:</label>
+                    <div class="input-group">
+                        <input
+                        type="number"
+                        class="form-control"
+                        id="ci_saneamiento"
+                        placeholder="Cedula de identidad"
+                        name="ci_saneamiento"
+                        required
+                        />
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="cic_saneamiento"
+                        placeholder="Complemento"
+                        name="cic_saneamiento"
+                        maxlength="2"
+                        />
+                    </div>
+            </div>
+            <div class="form-group">
+                <label for="datos_usuario">Datos del Usuario:</label>
+                    <div class="input-group">
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="nom_saneamiento"
+                        placeholder="Nombre completo"
+                        name="nom_saneamiento"
+                        required
+                        />
+                        <input
+                        type="text"
+                        class="form-control"
+                        id="ref_saneamiento"
+                        placeholder="Numero de referencia"
+                        name="ref_saneamiento"
+                        />
+                    </div>
+            </div>
+            <div class="form-group">
+                <label for="datos_usuario">Fecha de Inicio y Finalizacion del tramite:</label>
+                    <div class="input-group">
+                        <input
+                        type="date"
+                        class="form-control"
+                        id="fecha_inicio"
+                        name="fecha_inicio"
+                        required
+                        />
+                        <input
+                        type="date"
+                        class="form-control"
+                        id="fecha_fin"
+                        name="fecha_fin"
+                        required
+                        />
+                    </div>
+            </div>
+            <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#myModal"
+            onclick="registrarRegularizar();"
+            >
+            Registrar
+            </button>
+        </form>
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Regularizacion de Tramites</h5>
+                    </div>
+                    <div id="mostrardatos"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

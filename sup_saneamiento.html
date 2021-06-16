@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sistema de Seguimiento y Control de Tramites de Saneamiento</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/funciones.js"></script>
+    <script>
+        navbar();
+        estadisticos();
+    </script>
+</head>
+<body>
+    <div id="login"></div>
+    <div id="navbar"></div>
+    <div class="container">
+        <h2>&nbsp;</h2>
+        <h2>Estado Tramites Saneamiento</h2>
+        <div id="mostrarDesconexion"></div>
+        <div class="card-deck">
+            <div class="col-md-3">
+                <div class="card text-white text-center bg-primary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Ingresados</div>
+                    <div class="card-body">
+                    <h5 class="h1 card-title"><span id="totalFull">654</span></h5>
+                    <p class="card-text">Total de tramites Ingresados.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white text-center bg-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Finalizados</div>
+                    <div class="card-body">
+                    <h5 class="h1 card-title"><span id="totalFinalizados">654</span></h5>
+                    <p class="card-text">Total de tramites finalizados en oficina.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white text-center bg-warning mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Externos</div>
+                    <div class="card-body">
+                    <h5 class="h1 card-title"><span id="totalExternos">32</span></h5>
+                    <p class="card-text">Total de tramites con solicitud externa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-white text-center bg-danger mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Pendientes</div>
+                    <div class="card-body">
+                    <h5 class="h1 card-title"><span id="totalPendientes">152</span></h5>
+                    <p class="card-text">Total de tramites pendientes en oficia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="form" method="post">
+        <div class="input-group mb-3">
+            <select class="form-control" name="estado_control" id="estado_control">
+                <option value="">Seleccione un Estado</option>
+                <option value="5">Todos</option>
+                <option value="1">Finalizados</option>
+                <option value="2">Externos</option>
+                <option value="0">Pendientes</option>
+            </select>
+            <select class="form-control" name="id_usuario" id="id_usuario">
+                <option value="">Seleccione un Usuario</option>
+                <option value="0">Todos</option>
+                <option value="2">Paola Marcela Molina Romero</option>
+                <option value="3">Sonia Yucra Ortiz</option>
+                <option value="4">Cristian Terrazas Camacho</option>
+            </select>
+            <input type="date" class="form-control" id="fecha_de" name="fecha_de">
+            <input type="date" class="form-control" id="fecha_a" name="fecha_a">
+            <div class="input-group-append">
+                <button class="btn btn-success" type="button" onclick="porDatos();">Listar</button>
+            </div>
+        </div>
+        </form>
+        <div class="table-responsive-sm">
+            <div id="mostrardatos"></div>
+        </div>
+    </div>
+</body>
+</html>
